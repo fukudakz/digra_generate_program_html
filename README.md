@@ -84,7 +84,6 @@
 ターミナルで `digra_program_page` ディレクトリに移動して次を実行します。
 
 ```bash
-cd /Users/fukudakazufumi/Library/CloudStorage/OneDrive-学校法人立命館/Codes/digra_program_page
 python3 generate_program_html.py
 ```
 
