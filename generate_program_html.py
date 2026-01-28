@@ -95,6 +95,17 @@ def format_date_jp(date_str: str) -> str:
 _TIME_PATTERN = re.compile(r"(\d{1,2}):(\d{2})")
 
 
+def room_sort_key(room: str):
+    """
+    タイムテーブル用の教室ソートキー。
+    「受付」「懇親会」「昼食」を含む列は右側（後ろ）に寄せる。
+    """
+    special_keywords = ("受付", "懇親会", "昼食")
+    is_special = any(k in room for k in special_keywords)
+    # is_special が False (0) の部屋が左側、True (1) が右側
+    return (1 if is_special else 0, room)
+
+
 def start_time_key(time_str: str):
     """時間文字列から開始時刻を (hour, minute) のタプルで返す"""
     # 区切り記号（全角/半角の波ダッシュなど）で開始時刻部分を取り出す
@@ -275,7 +286,16 @@ def generate_html(sessions, talks_by_session, conference_name: str):
         html.append('<div class="date-block">')
         html.append(f"  <h3>{format_date_jp(date_str)}</h3>")
 
-        rooms = sorted({s["room"] for s in sess_list})
+        # タイムテーブルの列順:
+        # セルの値（セッション名）に「受付」「懇親会」「昼食」が含まれる部屋を右側に寄せる
+        all_rooms = {s["room"] for s in sess_list}
+        special_keywords = ("受付", "懇親会", "昼食")
+        special_rooms = {
+            s["room"]
+            for s in sess_list
+            if any(k in s["name"] for k in special_keywords)
+        }
+        rooms = sorted(all_rooms, key=lambda r: (1 if r in special_rooms else 0, r))
         times = sorted({s["time"] for s in sess_list}, key=start_time_key)
 
         if rooms and times:
