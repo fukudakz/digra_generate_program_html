@@ -330,7 +330,8 @@ def generate_html(sessions, talks_by_session, conference_name: str):
         for time_str in sorted(sessions_by_time.keys(), key=start_time_key):
             html.append(f'  <h4>{time_str}</h4>')
 
-            for s in sessions_by_time[time_str]:
+            # 同じ時間帯のセッションは教室名（room）でソート
+            for s in sorted(sessions_by_time[time_str], key=lambda x: x["room"]):
                 sid = s["id"]
                 anchor_id = f"session-{sid}"
                 html.append('  <div class="session">')
