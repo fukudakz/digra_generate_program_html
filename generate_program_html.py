@@ -31,6 +31,92 @@ TALK_CSV = SOURCE_DIR / "talk.csv"
 OUTPUT_HTML = OUTPUT_DIR / "program.html"
 CONFERENCE_NAME_TXT = SOURCE_DIR / "conference_name.txt"
 
+PAGE_CSS = """
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+      line-height: 1.7;
+      font-size: 15px;
+      color: #333;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    .page-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 16px 64px;
+      background: #fff;
+    }
+    h1 {
+      font-size: 26px;
+      margin-top: 0;
+      margin-bottom: 24px;
+      border-bottom: 2px solid #e5e5e5;
+      padding-bottom: 8px;
+    }
+    h2 {
+      font-size: 20px;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      border-left: 4px solid #0073a8;
+      padding-left: 8px;
+    }
+    h3 {
+      font-size: 17px;
+      margin-top: 20px;
+      margin-bottom: 8px;
+      color: #0073a8;
+    }
+    .date-block { margin-top: 24px; }
+    .session {
+      margin: 8px 0 14px;
+      padding: 8px 12px 10px;
+      border: 1px solid #e1e1e1;
+      border-radius: 3px;
+      background: #fafafa;
+    }
+    .session-header { margin-bottom: 4px; }
+    .session-location { font-size: 13px; color: #555; }
+    .session-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #0073a8;
+      margin-top: 2px;
+    }
+    .session-meta { font-size: 13px; color: #666; margin-bottom: 4px; }
+    .talk-list { margin: 6px 0 0 1.5em; padding: 0; }
+    .talk-list li { margin-bottom: 6px; }
+    .talk-title { font-weight: 600; }
+    .talk-authors { font-size: 13px; color: #555; }
+    .schedule-table-wrap { margin-top: 8px; margin-bottom: 18px; }
+    .schedule-table {
+      border-collapse: collapse;
+      width: 100%;
+      table-layout: fixed;
+      font-size: 13px;
+    }
+    .schedule-table th, .schedule-table td {
+      border: 1px solid #ddd;
+      padding: 4px 6px;
+      text-align: center;
+      vertical-align: top;
+    }
+    .schedule-table thead th {
+      background: #f0f4f8;
+      font-weight: 600;
+    }
+    .schedule-time { white-space: nowrap; background: #f9fafb; }
+    .schedule-table td { font-size: 12px; }
+    .schedule-table a { color: #0073a8; text-decoration: none; }
+    .schedule-table a:hover { text-decoration: underline; }
+    @media screen and (max-width: 600px) {
+      .page-wrap { padding: 16px 8px 40px; }
+      h1 { font-size: 22px; }
+      h2 { font-size: 18px; }
+      h3 { font-size: 16px; }
+    }
+"""
+
 
 def read_sessions(path: Path):
     """session.csv を読み込んで辞書にする"""
@@ -93,17 +179,21 @@ def format_date_jp(date_str: str) -> str:
 
 
 _TIME_PATTERN = re.compile(r"(\d{1,2}):(\d{2})")
+SPECIAL_ROOM_KEYWORDS = ("受付", "懇親会", "昼食", "休憩", "見学会")
 
 
-def room_sort_key(room: str):
+def get_rooms_sorted_for_timetable(sess_list):
     """
-    タイムテーブル用の教室ソートキー。
-    「受付」「懇親会」「昼食」を含む列は右側（後ろ）に寄せる。
+    タイムテーブル用の列順。
+    セルの値（セッション名）にSPECIAL_ROOM_KEYWORDSが含まれる部屋を右側に寄せる。
     """
-    special_keywords = ("受付", "懇親会", "昼食")
-    is_special = any(k in room for k in special_keywords)
-    # is_special が False (0) の部屋が左側、True (1) が右側
-    return (1 if is_special else 0, room)
+    all_rooms = {s["room"] for s in sess_list}
+    special_rooms = {
+        s["room"]
+        for s in sess_list
+        if any(k in s["name"] for k in SPECIAL_ROOM_KEYWORDS)
+    }
+    return sorted(all_rooms, key=lambda r: (1 if r in special_rooms else 0, r))
 
 
 def start_time_key(time_str: str):
@@ -154,126 +244,7 @@ def generate_html(sessions, talks_by_session, conference_name: str):
     html.append('  <meta charset="UTF-8">')
     html.append("  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">")
     html.append(f"  <title>{conference_name}</title>")
-    # スタイル（サンプルページ風の見た目）
-    html.append("  <style>")
-    html.append("    body {")
-    html.append("      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;")
-    html.append("      line-height: 1.7;")
-    html.append("      font-size: 15px;")
-    html.append("      color: #333;")
-    html.append("      background: #f5f5f5;")
-    html.append("      margin: 0;")
-    html.append("      padding: 0;")
-    html.append("    }")
-    html.append("    .page-wrap {")
-    html.append("      max-width: 960px;")
-    html.append("      margin: 0 auto;")
-    html.append("      padding: 32px 16px 64px;")
-    html.append("      background: #fff;")
-    html.append("    }")
-    html.append("    h1 {")
-    html.append("      font-size: 26px;")
-    html.append("      margin-top: 0;")
-    html.append("      margin-bottom: 24px;")
-    html.append("      border-bottom: 2px solid #e5e5e5;")
-    html.append("      padding-bottom: 8px;")
-    html.append("    }")
-    html.append("    h2 {")
-    html.append("      font-size: 20px;")
-    html.append("      margin-top: 32px;")
-    html.append("      margin-bottom: 12px;")
-    html.append("      border-left: 4px solid #0073a8;")
-    html.append("      padding-left: 8px;")
-    html.append("    }")
-    html.append("    h3 {")
-    html.append("      font-size: 17px;")
-    html.append("      margin-top: 20px;")
-    html.append("      margin-bottom: 8px;")
-    html.append("      color: #0073a8;")
-    html.append("    }")
-    html.append("    .date-block {")
-    html.append("      margin-top: 24px;")
-    html.append("    }")
-    html.append("    .session {")
-    html.append("      margin: 8px 0 14px;")
-    html.append("      padding: 8px 12px 10px;")
-    html.append("      border: 1px solid #e1e1e1;")
-    html.append("      border-radius: 3px;")
-    html.append("      background: #fafafa;")
-    html.append("    }")
-    html.append("    .session-header {")
-    html.append("      margin-bottom: 4px;")
-    html.append("    }")
-    html.append("    .session-location {")
-    html.append("      font-size: 13px;")
-    html.append("      color: #555;")
-    html.append("    }")
-    html.append("    .session-title {")
-    html.append("      font-size: 16px;")
-    html.append("      font-weight: 600;")
-    html.append("      color: #0073a8;")
-    html.append("      margin-top: 2px;")
-    html.append("    }")
-    html.append("    .session-meta {")
-    html.append("      font-size: 13px;")
-    html.append("      color: #666;")
-    html.append("      margin-bottom: 4px;")
-    html.append("    }")
-    html.append("    .talk-list {")
-    html.append("      margin: 6px 0 0 1.5em;")
-    html.append("      padding: 0;")
-    html.append("    }")
-    html.append("    .talk-list li {")
-    html.append("      margin-bottom: 6px;")
-    html.append("    }")
-    html.append("    .talk-title {")
-    html.append("      font-weight: 600;")
-    html.append("    }")
-    html.append("    .talk-authors {")
-    html.append("      font-size: 13px;")
-    html.append("      color: #555;")
-    html.append("    }")
-    html.append("    .schedule-table-wrap {")
-    html.append("      margin-top: 8px;")
-    html.append("      margin-bottom: 18px;")
-    html.append("    }")
-    html.append("    .schedule-table {")
-    html.append("      border-collapse: collapse;")
-    html.append("      width: 100%;")
-    html.append("      table-layout: fixed;")
-    html.append("      font-size: 13px;")
-    html.append("    }")
-    html.append("    .schedule-table th, .schedule-table td {")
-    html.append("      border: 1px solid #ddd;")
-    html.append("      padding: 4px 6px;")
-    html.append("      text-align: center;")
-    html.append("      vertical-align: top;")
-    html.append("    }")
-    html.append("    .schedule-table thead th {")
-    html.append("      background: #f0f4f8;")
-    html.append("      font-weight: 600;")
-    html.append("    }")
-    html.append("    .schedule-time {")
-    html.append("      white-space: nowrap;")
-    html.append("      background: #f9fafb;")
-    html.append("    }")
-    html.append("    .schedule-table td {")
-    html.append("      font-size: 12px;")
-    html.append("    }")
-    html.append("    .schedule-table a {")
-    html.append("      color: #0073a8;")
-    html.append("      text-decoration: none;")
-    html.append("    }")
-    html.append("    .schedule-table a:hover {")
-    html.append("      text-decoration: underline;")
-    html.append("    }")
-    html.append("    @media screen and (max-width: 600px) {")
-    html.append("      .page-wrap { padding: 16px 8px 40px; }")
-    html.append("      h1 { font-size: 22px; }")
-    html.append("      h2 { font-size: 18px; }")
-    html.append("      h3 { font-size: 16px; }")
-    html.append("    }")
-    html.append("  </style>")
+    html.append(f"  <style>{PAGE_CSS}</style>")
     html.append("</head>")
     html.append("<body>")
     html.append('<div class="page-wrap">')
@@ -286,16 +257,7 @@ def generate_html(sessions, talks_by_session, conference_name: str):
         html.append('<div class="date-block">')
         html.append(f"  <h3>{format_date_jp(date_str)}</h3>")
 
-        # タイムテーブルの列順:
-        # セルの値（セッション名）に「受付」「懇親会」「昼食」が含まれる部屋を右側に寄せる
-        all_rooms = {s["room"] for s in sess_list}
-        special_keywords = ("受付", "懇親会", "昼食")
-        special_rooms = {
-            s["room"]
-            for s in sess_list
-            if any(k in s["name"] for k in special_keywords)
-        }
-        rooms = sorted(all_rooms, key=lambda r: (1 if r in special_rooms else 0, r))
+        rooms = get_rooms_sorted_for_timetable(sess_list)
         times = sorted({s["time"] for s in sess_list}, key=start_time_key)
 
         if rooms and times:
