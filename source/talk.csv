@@ -3,9 +3,8 @@
 2,7,1,"Yuma Kawachi, Haruto Fujisaki and Yukihiro Shintani",スプリントレトロスペクティブの失敗パターンに基づくゲーミフィケーション設計枠組みの提案：GxRトリプルレンズ・スキームとGxR‑4Ls
 3,8,1,"彩夏 塩路, 基展 川島 and 浩司 三上",アニメの撮影技法に基づくビデオゲームにおける視点構築手法
 4,9,1,真也 小林,学習者が没頭する学習デザインのための実践的枠組みの構築を目指して―ゲーミフィケーション研究の新たな潮流と展望―
-5,41,3,"鴫原 盛之, 小野 憲史 and 秦 亮彦",インディーゲームの展示イベントとメディア運営を両立させる「ゲームパビリオンjp」の現状と今後の展望 -第16回ゲームメディア研究会-
-6,42,2,"William Huber, Akinori Nakamura and Mattias van Ommen","Persistent Worlds after the MMO Boom: Studying Long-Running
- Games as Cultural Systems"
+5,41,2,"鴫原 盛之, 小野 憲史 and 秦 亮彦",インディーゲームの展示イベントとメディア運営を両立させる「ゲームパビリオンjp」の現状と今後の展望 -第16回ゲームメディア研究会-
+6,42,3,"William Huber, Akinori Nakamura and Mattias van Ommen","Persistent Worlds after the MMO Boom: Studying Long-Running  Games as Cultural Systems"""
 7,5,4,Kainan Meng,ゲームセンターの低リスクエンタテイメント ー中国におけるクレーンゲームに着目してー
 8,37,4,"Jiaxin Li, Akira Igarashi and Yuhsuke Koyama",日中スマホゲーム実況における課金行動の比較研究
 9,50,4,Wang Yuhua and Nakamura Akinori,ゲームアウトソーシング会社の国際展開に関する研究日本と中国を中心に
@@ -16,48 +15,71 @@
 14,35,6,"大洋 澤田, 紀之 下田 and 雅春 廣田",Steamにおけるビデオゲームの日本語レビューを用いたレビュー時点におけるプレイ時間の分析
 15,49,6,Wu Chaoxian and 中村 彰憲,中国におけるインディーゲームプレイヤーのプレイシーンおよび欲求と、その商業的応用に関する探索的研究
 16,29,6,稙 李 and 隆之 中村,実験用ゲームを用いたコンパニオンキャラクター選択における性別や文化的背景の影響分析
-17,1,7,Yuuki Shiina,"TCGプロゲーマーとは何者か？オートエスノグラフィーによる語り ―
- ポケモンカード実践から読み解く職業アイデンティティの透明化 ―"
-18,34,7,"公洋 那須, 紀之 下田 and 雅春 廣田","グラフ埋め込みを用いた Counter-Strike: Global Offensive
- におけるラウンドの試合展開の分析に関する研究"
-19,30,7,彩音 田村 and 隆之 中村,『マリオカート8 デラックス』における頭部傾斜角とゴールタイムの関係 ― 操作モードおよびプレイヤー習熟度の影響 ―
+17,34,7,"公洋 那須, 紀之 下田 and 雅春 廣田","グラフ埋め込みを用いた Counter-Strike: Global Offensive におけるラウンドの試合展開の分析に関する研究"""
+18,30,7,彩音 田村 and 隆之 中村,『マリオカート8 デラックス』における頭部傾斜角とゴールタイムの関係 ― 操作モードおよびプレイヤー習熟度の影響 ―
+19,1,7,Yuuki Shiina,"TCGプロゲーマーとは何者か？オートエスノグラフィーによる語り ―
+ポケモンカード実践から読み解く職業アイデンティティの透明化 ―"
 20,25,8,"憲史 小野, 恵太 水上, 賢史 児玉 and 智也 町出",生成AIを活用したゲーム制作ワークショップの教育効果 —学科間比較とKJ法分析による統合的検討—
 21,14,8,崇之 宮城島 and 好弘 岸本,初心者でも挑戦できるゲームコンテスト ― 全国小中学生向け民間ゲームプログラミングコンテストの設計と成果 ―
 22,17,8,Ryota Yagi and Hirokazu Fukuda,Unreal Engineを用いたフォトリアリスティック植物自律点群の概日時計3Dシミュレーション
-23,46,8,"Megumi Aibara, Yuki Omata, Chihiro Terasaki and Hiroshi
- Matsuda",ドローン操作における『遊び』の構造分析：ロジェ・カイヨワの理論枠組みによるeスポーツ化の検討
+23,13,8,Akihiro Nakamura,実利用をゴールに設定したゲーム制作教育の実践 ―― デジタルラボ構想における産学連携の試み ――
 24,27,9,"秀司 中塚, 知也 半田, 博隆 伊藤 and 久美子 杢野",波長制御レンズが画面上の視覚刺激に対する応答速度に及ぼす影響
 25,45,9,"Ryota Akai, Ayaka Yoshino, Kumiko Ohara, Harunobu Nakamura
- and Yoshimitsu Okita",気球飛行型ゲームにおけるインクルーシブな呼吸入力インターフェース開発の試み
+and Yoshimitsu Okita",気球飛行型ゲームにおけるインクルーシブな呼吸入力インターフェース開発の試み
 26,52,9,"雄大 森, 天翔 稲子 and 知記 梶並",対戦型格闘ゲームを対象にしたキャラクタの技の使用順序に着目した試合分析インタフェースの試作
 27,28,9,宇涵 熊 and 隆之 中村,UIアニメーションの複雑性が短期記憶と体験評価に与える影響
 28,48,10,大和 下神 and 知記 梶並,VALORANT大会観戦者を対象にした直前ラウンドのイベント確認支援インタフェースの試作
 29,43,10,Martin Roth,"Transregional play? Language diversity in game-related
- YouTube practices"
-30,13,11,Akihiro Nakamura,実利用をゴールに設定したゲーム制作教育の実践 ―― デジタルラボ構想における産学連携の試み ――
-31,19,11,"Kan Shimazaki, Makiko Okamoto, Yutaka Yoshida, Miharu
- Fukunaga, Yuriko Ode and Mitsuharu Kamimura",トラックドライバー向け防災ショート動画ゲーム「ドライバーぎりぎりチョイス」の開発
-32,2,11,Shinya Miyagawa,情報リテラシー学習支援におけるゲーム要素と学習者特性を踏まえた試行と実践
-33,18,11,Yan Zhu and Ryousuke Furukado,"Minecraft Education Teacher Academyの課題に基づく教員研修の再設計
- ―実践演習型New Teacher Academyの開発とパイロット評価―"
-34,16,12,大祐 藤川,いじめ問題の多層的ゲームモデル化－合理的行為とストレス蓄積の相互作用に着目して－
-35,38,12,"健吾 横光, 智也 入江 and 広樹 新川","中・高校生の適切なゲーム使用を促進するWEB版Personalized Normative
- Feedbackシステムの開発"
-36,69,12,"子敏 莫, 知宏 木村 and 徹 藤本","Enhancing Team-Based Learning with Murder Mystery Game: A
- Psychoeducational Workshop Design"
+YouTube practices"
+30,19,11,"Kan Shimazaki, Makiko Okamoto, Yutaka Yoshida, Miharu
+Fukunaga, Yuriko Ode and Mitsuharu Kamimura",トラックドライバー向け防災ショート動画ゲーム「ドライバーぎりぎりチョイス」の開発
+31,2,11,Shinya Miyagawa,情報リテラシー学習支援におけるゲーム要素と学習者特性を踏まえた試行と実践
+32,18,11,Yan Zhu and Ryousuke Furukado,"Minecraft Education Teacher Academyの課題に基づく教員研修の再設計
+―実践演習型New Teacher Academyの開発とパイロット評価―"
+33,16,12,大祐 藤川,いじめ問題の多層的ゲームモデル化－合理的行為とストレス蓄積の相互作用に着目して－
+34,38,12,"健吾 横光, 智也 入江 and 広樹 新川","中・高校生の適切なゲーム使用を促進するWEB版Personalized Normative
+Feedbackシステムの開発"
+35,69,12,"子敏 莫, 知宏 木村 and 徹 藤本","Enhancing Team-Based Learning with Murder Mystery Game: A
+Psychoeducational Workshop Design"
 37,44,13,"知也 半田, 心優 古関, 玲那 進藤, 玲奈 芹澤 and 陽 石垣",多感覚デジタルゲームにおける課題設計と視覚野活動の変化 ―ラタトーンを用いた検討―
 38,39,13,康秀 石神 and 裕紀 坂井,課題解決のためのゲームデザインと「翻訳的アプローチ」の実践 ―訪問診療現場におけるコミュニケーション支援ツールの開発事例を通じて―
-39,74,13,優奈 中尾,ゲーミフィケーションによる信頼社会の高速創造 -マグリブ商人からグラミン銀行、そして璃月-
-40,64,13,"Masayuki Tsujino, Kenji Ono and Asahi Higashiyama",シリアスゲームを活用した都市交通の社会的インセンティブ設計枠組みの提案
-41,12,14,Yasuo Kawasaki and Morihiro Shigihara,アーケードゲーム機の修理・修繕に関する史資料の調査分析―文献資料を中心に―
-42,75,14,Haorui Tong,ビデオゲームにおける労働の連続性 -労働表象からプレイバーへ-
-43,55,14,"昌一 古市, 拓真 古市, 萌 粟飯原, 万実 岡田, 和巳 関口, 篤史 小林 and 多佳子 進士",ゲームが持つチカラの応用法 〜ライフヒストリ支援システムLHS 3.0〜
-44,59,14,彪冴 向井 and 久一 羽田,デジタルゲーム保存資料としてのプレイ映像の有効性と構成手法
-45,6,15,荘太 森澤,私球：遊びの現象学的還元による幾何モデル
-46,57,15,Tomohiro Kimura and Toru Fujimoto,ゲーム心理学の射程
+39,64,13,"Masayuki Tsujino, Kenji Ono and Asahi Higashiyama",シリアスゲームを活用した都市交通の社会的インセンティブ設計枠組みの提案
+40,12,14,Yasuo Kawasaki and Morihiro Shigihara,アーケードゲーム機の修理・修繕に関する史資料の調査分析―文献資料を中心に―
+41,75,14,Haorui Tong,ビデオゲームにおける労働の連続性 -労働表象からプレイバーへ-
+42,55,14,"昌一 古市, 拓真 古市, 萌 粟飯原, 万実 岡田, 和巳 関口, 篤史 小林 and 多佳子 進士",ゲームが持つチカラの応用法 〜ライフヒストリ支援システムLHS 3.0〜
+43,59,14,彪冴 向井 and 久一 羽田,デジタルゲーム保存資料としてのプレイ映像の有効性と構成手法
+44,6,15,Tomohiro Kimura and Toru Fujimoto,ゲーム心理学の射程
+45,57,15,荘太 森澤,私球：遊びの現象学的還元による幾何モデル
+46,46,15,"Megumi Aibara, Yuki Omata, Chihiro Terasaki and Hiroshi
+Matsuda",ドローン操作における『遊び』の構造分析：ロジェ・カイヨワの理論枠組みによるeスポーツ化の検討
 47,10,16,Terumasa Nakamura and Kenichi Takahashi,ゲームルールを自律的に獲得するLLMエージェントの試作
 48,22,16,Youichiro Miyake,環世界とニューラルネットワークを用いたシューティングの実装
 49,33,17,Mitsuhiro Ogawa,統計学習ゲームの企画において直面した大規模言語モデルにおける統計的検定解釈の誤謬 ― 正規性検定を事例として ―
 50,32,17,Toshiya Kawato,初期段階のプログラミング教育の集大成としてのコマンドラインゲーム作りにおける生成AIの活用
 51,70,17,Taiyo Nakayama,対戦シミュレータに基づく遺伝的アルゴリズムによるカードゲームのデッキ推薦
 52,,24,小宮真樹子,デジタルゲームと中世騎士道文学：アーサー王伝説を中心に
+53,11,18,大介 Tanabe,発達障害の特性のある看護学生の支援のためのシリアスゲームを用いた教育プログラムの開発
+54,36,18,"Hikaru Sugizawa, Jumpei Ono and Takashi Ogata",偽情報伝播機構を含んだマルチエージェントに基づく物語生成ゲームの提案
+55,53,18,Kenjiro Takahashi and Yasuyuki Uchida,Research on Photography Experiences using a Camera in Virtual Reality
+56,56,18,"Yuka Okayama, Jumpei Ono and Takashi Ogata",物語論を踏まえ文章とイメージ画像を柔軟に生成するAIを用いたビジュアルノベル
+57,58,18,"純朗 有馬, 慎之輔 三原 and Inhyeok Jeong",eスポーツにおける筋収縮制御能力の改善方法 〜eスポーツ選手及びリハビリテーション手法への応用〜
+58,76,18,"陸斗 江波戸, 義広 河野 and 恵理子 原田",SDGsとゲーミフィケーションを組み合わせたプロソーシャルモチベーション向上のためのゲームデザイン検討
+59,77,18,真実 鎌田 and 智也 入江,これまでのゲーム使用が与えてきたポジティブな効果：ゲームとともに大人になるまでの経路
+60,78,18,Taiyo Nakayama,対戦シミュレータに基づく遺伝的アルゴリズムによるカードゲームのデッキ推薦
+61,79,18,Romain ロマン Lebailly ルバイー,A Proposal to Examine Sega's History from the Perspectives of Global History and Cultural History
+62,15,22,好弘 岸本 and 崇之 宮城島,初心者でも挑戦できるゲームコンテスト ― 全国小中学生向けゲームプログラミングコンテスト作品の試遊 ―
+63,20,22,Toshifumi Umino and Atsushi Oshio,ゲーム依存傾向とは何か
+64,21,22,"Kenichi Ito, Mana Tokutome, Megumi Aibara, Yuichiro Gomi and Masaki Okada",生成 AI がゲーム開発の相棒になる？－誰でも実践可能な化学学習用ゲームアプリ開発法の提案－
+65,26,22,"智子 大谷, 拓巳 横坂, 淳 藤木 and 和史 丸谷",レトロゲームにおける非現実性判断の背景 ― 未経験世代を対象としたワークショップ型調査 ―
+66,31,22,"ひかる 兵頭, 智也 入江, 広樹 新川 and 健吾 横光",子どものゲーム利用時間と保護者によるルール設定の関連：横断調査
+67,51,22,Takashi Obana and Chitoko Koide,「オンラインゲーム」の保存のための諸課題と展望
+68,54,22,淳一 池本,空き家補助金制度に関するエレメカ式クイズゲームの開発
+69,60,22,"Kento Okano, Moeko Akashi and Shota Wada",VRの教育活用に関する教員研修のデザインと実践
+70,61,22,"木下 隼人, 土田 勘介 and 福田 弘和",Unreal Engineを用いたゲーム空間としての植物工場三次元空間の再構成と表現検討
+71,62,22,研心 小泉 and 弘和 福田,農作業ヒューマノイドモデルのVLA学習に向けた仮想空間データ収集システムの開発
+72,63,22,Soushi Matsuura and Hirokazu Fukuda,Unreal Engineを用いた農作業ヒューマノイドの動作シミュレーション
+73,65,22,"Keigo Tokeshi, Wataru Kurihara and Koji Mikami",サッカービデオゲームにおけるフリースペース可視化によるプレイ支援
+74,66,22,"Ken Takahara, Wataru Kurihara and Koji Mikami",音による入力タイミング提示が格闘ゲームのコマンド入力習得に与える影響
+75,67,22,"Thingxian Seow, Wataru Kurihara and Koji Mikami",協力型オンラインゲームにおける心拍および 表情可視化インタフェースの提案
+76,68,22,"Kouki Fujimoto, Wataru Kurihara and Koji Mikami",脚の動作入力を用いたVRクライミングゲームの体験向上
+77,71,22,"恵佑 馬場, 智 永井 and 智也 入江",青年期後期におけるゲーム利用と攻撃性の関連性について
